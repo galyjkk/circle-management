@@ -34,18 +34,18 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/*/}*.js'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}{,*/*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
       jsTest: {
-        files: ['test/spec/{,*/*/}*.js'],
+        files: ['test/spec/{,*/}{,*/*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       less: {
-        files: ['<%= yeoman.app %>/styles/{,*/*/}*.less',],
+        files: ['<%= yeoman.app %>/styles/{,*/}{,*/*/}*.less',],
         tasks: ['less']
       },
       // styles: {
@@ -60,10 +60,10 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/{,*/*/}*.html',
-          '.tmp/styles/{,*/*/}*.css',
-          '<%= yeoman.app %>/images/{,*/*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.app %>/styles/{,*/*/}*.less'
+          '<%= yeoman.app %>/{,*/}{,*/*/}*.html',
+          '.tmp/styles/{,*/}{,*/*/}*.css',
+          '<%= yeoman.app %>/images/{,*/}{,*/*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.app %>/styles/{,*/}{,*/*/}*.less'
         ]
       }
     },
@@ -125,14 +125,14 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/*/}*.js'
+          '<%= yeoman.app %>/scripts/{,*/}{,*/*/}*.js'
         ]
       },
       test: {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-        src: ['test/spec/{,*/*/}*.js']
+        src: ['test/spec/{,*/}{,*/*/}*.js']
       }
     },
 
@@ -169,7 +169,7 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
+            '<%= yeoman.dist %>/{,*/}{,*/*/}*',
             '!<%= yeoman.dist %>/.git*'
           ]
         }]
@@ -204,9 +204,9 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/scripts/{,*/*/}*.js',
-          '<%= yeoman.dist %>/styles/{,*/*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.dist %>/scripts/{,*/}{,*/*/}*.js',
+          '<%= yeoman.dist %>/styles/{,*/}{,*/*/}*.css',
+          '<%= yeoman.dist %>/images/{,*/}{,*/*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
@@ -233,8 +233,8 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/*/}*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/*/}*.css'],
+      html: ['<%= yeoman.dist %>/{,*/}{,*/*/}*.html'],
+      css: ['<%= yeoman.dist %>/styles/{,*/}{,*/*/}*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
       }
@@ -300,7 +300,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/*/}*.html'],
+          src: ['*.html', 'views/{,*/}{,*/*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -339,7 +339,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
-            'views/{,*/*/}*.html',
+            'views/{,*/}{,*/*/}*.html',
             'images/{,*/}*.{webp}',
             'fonts/*'
           ]
