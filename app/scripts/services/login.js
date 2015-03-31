@@ -1,13 +1,17 @@
 'use strict';
 
 angular.module('circleManagementApp')
-  .service('MainService', function ($http) {
+  .service('LoginService', function ($http, $rootScope, $location) {
     var configUrl = 'http://127.0.0.1:8080/CircleServer/CircleServlet';
     var me = this;
     // Service logic
 
-    this.onSendMessageToServer = function (data) {
-      console.log('callback+'+data);
+    this.onLoginSuccess = function() {
+      $location.path('/home');
+      var fakeData = {
+        'username': 'galy'
+      };
+      $rootScope.$broadcast('onLoginSuccess', fakeData);
     };
 
     /**
@@ -33,10 +37,9 @@ angular.module('circleManagementApp')
     // Public API here
     return {
 
-      // add item to a tub
-      sendMessageToServer: function (params) {
-        me.Get('', params, me.onSendMessageToServer);
-      },
+      userLogin: function() {
+        me.onLoginSuccess();
+      }
 
     };
 
