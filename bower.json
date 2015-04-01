@@ -19,7 +19,9 @@
     "angular-scroll": "latest",
     "angular-aside": "latest",
     "DataTables": "latest",
-    "angular-datatables": "latest"
+    "angular-datatables": "latest",
+    "nvd3": "latest",
+    "angular-nvd3": "latest"
   },
   "devDependencies": {
     "angular-mocks": "latest",

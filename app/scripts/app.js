@@ -19,7 +19,8 @@ angular
     'ui.bootstrap',
     'duScroll',
     'ngAside',
-    'datatables'
+    'datatables',
+    'nvd3'
   ])
   .config(function ($routeProvider) {
     $routeProvider
