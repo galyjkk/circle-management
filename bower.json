@@ -16,7 +16,10 @@
     "angular-bootstrap": "latest",
     "fontawesome": "latest",
     "d3": "latest",
-    "angular-scroll": "latest"
+    "angular-scroll": "latest",
+    "angular-aside": "latest",
+    "DataTables": "latest",
+    "angular-datatables": "latest"
   },
   "devDependencies": {
     "angular-mocks": "latest",

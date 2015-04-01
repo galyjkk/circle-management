@@ -1,110 +1,221 @@
-<div class="navbar" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="index.html#"><i class="icon-rocket"></i> <span>Real Admin</span></a>
-    </div>
-    <ul class="nav navbar-nav navbar-actions navbar-left">
-        <li class="visible-md visible-lg"><a href="index.html#" id="main-menu-toggle"><i class="fa fa-bars"></i></a></li>
-        <li class="visible-xs visible-sm"><a href="index.html#" id="sidebar-menu"><i class="fa fa-bars"></i></a></li>
-    </ul>
-    <form class="navbar-form navbar-left">
-        <i class="fa fa-search"></i>
-        <input type="text" class="form-control" placeholder="Are you looking for something ?">
-    </form>
-    <ul class="nav navbar-nav navbar-right visible-md visible-lg">
-        <li><button class="btn btn-default">Preview</button></li>
-        <li><button class="btn btn-success">Launch</button></li>
-        <li><span class="timer"><i class="icon-clock"></i> <span id="clock"><!-- JavaScript clock will be displayed here, if you want to remove clock delete parent <li> --></span></span></li>
-        <li class="dropdown visible-md visible-lg">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/ico/flags/USA.png" style="height:18px; margin-top:-4px;"></a>
-            <ul class="dropdown-menu">
-                <li><a href="index.html#"><img src="assets/ico/flags/USA.png" style="height:18px; margin-top:-2px;"> US</a></li>
-                <li><a href="index.html#"><img src="assets/ico/flags/Spain.png" style="height:18px; margin-top:-2px;"> Spanish</a></li>
-                <li><a href="index.html#"><img src="assets/ico/flags/Germany.png" style="height:18px; margin-top:-2px;"> German</a></li>
-                <li><a href="index.html#"><img src="assets/ico/flags/Poland.png" style="height:18px; margin-top:-2px;"> Polish</a></li>
-            </ul>
-        </li>
-        <li class="dropdown visible-md visible-lg">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-envelope-letter"></i><span class="badge">4</span></a>
-            <ul class="dropdown-menu">
-                <li class="dropdown-menu-header">
-                    <strong>Messages</strong>
-                    <div class="progress thin">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                        <span class="sr-only">40% Complete (success)</span>
+<section ng-controller="HeaderCtrl">
+  <!-- header layout -->
+  <div class="navbar" role="navigation">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="javascript:void(0);"><i class="fa fa-skyatlas"></i> <span>Circle用户管理</span></a>
+      </div>
+      <ul class="nav navbar-nav navbar-actions navbar-left" ng-click="changeSidebarState()">
+          <li class="visible-md visible-lg"><a href="javascript:void(0);" id="main-menu-toggle"><i class="fa fa-bars"></i></a></li>
+          <li class="visible-xs visible-sm"><a href="javascript:void(0);" id="sidebar-menu"><i class="fa fa-bars"></i></a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+          <i class="fa fa-search"></i>
+          <input type="text" class="form-control" placeholder="搜索">
+      </form>
+      <ul class="nav navbar-nav navbar-right visible-md visible-lg">
+          <li class="dropdown visible-md visible-lg">
+              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><img src="images/flags/China.png" style="height:18px; margin-top:-4px;"></a>
+              <ul class="dropdown-menu">
+                  <li><a href="javascript:void(0);"><img src="images/flags/China.png" style="height:18px; margin-top:-2px;"> China</a></li>
+                  <li><a href="javascript:void(0);"><img src="images/flags/USA.png" style="height:18px; margin-top:-2px;"> US</a></li>
+              </ul>
+          </li>
+          <li class="dropdown visible-md visible-lg">
+              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope-o"></i><span class="badge">4</span></a>
+              <ul class="dropdown-menu">
+                  <li class="dropdown-menu-header">
+                      <strong>Messages</strong>
+                      <div class="progress thin">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                          <span class="sr-only">40% Complete (success)</span>
+                        </div>
                       </div>
-                    </div>
-                </li>
-                <li class="avatar">
-                    <a href="index.html#">
-                        <img class="avatar" src="assets/img/avatar.jpg">
-                        <div>New message</div>
-                        <small>1 minute ago</small>
-                        <span class="label label-info">NEW</span>
-                    </a>
-                </li>
-                <li class="avatar">
-                    <a href="index.html#">
-                        <img class="avatar" src="assets/img/avatar.jpg">
-                        <div>New message</div>
-                        <small>1 minute ago</small>
-                        <span class="label label-info">NEW</span>
-                    </a>
-                </li>
-                <li class="avatar">
-                    <a href="index.html#">
-                        <img class="avatar" src="assets/img/avatar.jpg">
-                        <div>New message</div>
-                        <small>1 minute ago</small>
-                    </a>
-                </li>
-                <li class="avatar">
-                    <a href="index.html#">
-                        <img class="avatar" src="assets/img/avatar.jpg">
-                        <div>New message</div>
-                        <small>1 minute ago</small>
-                    </a>
-                </li>
-                <li class="avatar">
-                    <a href="index.html#">
-                        <img class="avatar" src="assets/img/avatar.jpg">
-                        <div>New message</div>
-                        <small>1 minute ago</small>
-                    </a>
-                </li>
-                <li class="avatar">
-                    <a href="index.html#">
-                        <img class="avatar" src="assets/img/avatar.jpg">
-                        <div>New message</div>
-                        <small>1 minute ago</small>
-                    </a>
-                </li>
-                <li class="dropdown-menu-footer text-center">
-                    <a href="index.html#">View all messages</a>
-                </li>
-            </ul>
-        </li>
-        <li><a href="index.html#"><i class="icon-speech"></i></a></li>
-        <li class="dropdown visible-md visible-lg">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-settings"></i><span class="badge">!</span></a>
-            <ul class="dropdown-menu">
-                <li class="dropdown-menu-header text-center">
-                    <strong>Account</strong>
-                </li>
-                <li><a href="index.html#"><i class="fa fa-bell-o"></i> Updates <span class="label label-info">42</span></a></li>
-                <li><a href="index.html#"><i class="fa fa-envelope-o"></i> Messages <span class="label label-success">42</span></a></li>
-                <li><a href="index.html#"><i class="fa fa-tasks"></i> Tasks <span class="label label-danger">42</span></a></li>
-                <li><a href="index.html#"><i class="fa fa-comments"></i> Comments <span class="label label-warning">42</span></a></li>
-                <li class="dropdown-menu-header text-center">
-                    <strong>Settings</strong>
-                </li>
-                <li><a href="index.html#"><i class="fa fa-user"></i> Profile</a></li>
-                <li><a href="index.html#"><i class="fa fa-wrench"></i> Settings</a></li>
-                <li><a href="index.html#"><i class="fa fa-usd"></i> Payments <span class="label label-default">42</span></a></li>
-                <li><a href="index.html#"><i class="fa fa-file"></i> Projects <span class="label label-primary">42</span></a></li>
-                <li class="divider"></li>
-                <li><a href="index.html#"><i class="fa fa-shield"></i> Lock Profile</a></li>
-                <li><a href="index.html#"><i class="fa fa-lock"></i> Logout</a></li>
-            </ul>
-        </li>
-    </ul>
-</div>
+                  </li>
+                  <li class="avatar">
+                      <a href="javascript:void(0);">
+                          <img class="avatar" ng-src="images/avatar.jpg">
+                          <div>New message</div>
+                          <small>1 minute ago</small>
+                          <span class="label label-info">NEW</span>
+                      </a>
+                  </li>
+                  <li class="avatar">
+                      <a href="javascript:void(0);">
+                          <img class="avatar" ng-src="images/avatar.jpg">
+                          <div>New message</div>
+                          <small>1 minute ago</small>
+                          <span class="label label-info">NEW</span>
+                      </a>
+                  </li>
+                  <li class="avatar">
+                      <a href="javascript:void(0);">
+                          <img class="avatar" ng-src="images/avatar.jpg">
+                          <div>New message</div>
+                          <small>1 minute ago</small>
+                      </a>
+                  </li>
+                  <li class="avatar">
+                      <a href="javascript:void(0);">
+                          <img class="avatar" ng-src="images/avatar.jpg">
+                          <div>New message</div>
+                          <small>1 minute ago</small>
+                      </a>
+                  </li>
+                  <li class="avatar">
+                      <a href="javascript:void(0);">
+                          <img class="avatar" ng-src="images/avatar.jpg">
+                          <div>New message</div>
+                          <small>1 minute ago</small>
+                      </a>
+                  </li>
+                  <li class="avatar">
+                      <a href="javascript:void(0);">
+                          <img class="avatar" ng-src="images/avatar.jpg">
+                          <div>New message</div>
+                          <small>1 minute ago</small>
+                      </a>
+                  </li>
+                  <li class="dropdown-menu-footer text-center">
+                      <a href="javascript:void(0);">View all messages</a>
+                  </li>
+              </ul>
+          </li>
+          <li class="dropdown visible-md visible-lg">
+              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-settings"></i><span class="badge">!</span></a>
+              <ul class="dropdown-menu">
+                  <li class="dropdown-menu-header text-center">
+                      <strong>Account</strong>
+                  </li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-bell-o"></i> Updates <span class="label label-info">42</span></a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-envelope-o"></i> Messages <span class="label label-success">42</span></a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-tasks"></i> Tasks <span class="label label-danger">42</span></a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-comments"></i> Comments <span class="label label-warning">42</span></a></li>
+                  <li class="dropdown-menu-header text-center">
+                      <strong>Settings</strong>
+                  </li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-user"></i> Profile</a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-wrench"></i> Settings</a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-usd"></i> Payments <span class="label label-default">42</span></a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-file"></i> Projects <span class="label label-primary">42</span></a></li>
+                  <li class="divider"></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-shield"></i> Lock Profile</a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-lock"></i> Logout</a></li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+
+  <!-- sidebar layout -->
+  <div class="sidebar" ng-show="showSidebar">
+      <div class="sidebar-collapse">
+        <div class="sidebar-header">
+          <img ng-src="images/avatar.jpg">
+          <h2>Admin</h2>
+          <h3>admin@circle.com <a href="javascript:void(0);"></a></h3>
+        </div>
+        <div class="sidebar-menu">
+          <ul class="nav nav-sidebar">
+              <!-- user info -->
+              <li><a href="#/home"><i class="icon-user"></i><span class="text">用户基本资料<span class="label label-info">新</span></span></a></li>
+              <!-- user statistics -->
+              <li><a href="javascript:void(0);"><i class="icon-grid"></i><span class="text">会员动态统计</a></li>
+              <!-- content manage -->
+              <li><a href="javascript:void(0);"><i class="icon-book-open"></i><span class="text">内容管理</span></a></li>
+              <!-- push message -->
+              <li><a href="javascript:void(0);"><i class="icon-speech"></i><span class="text">消息推送</span></a></li>
+              <!-- data chart -->
+              <li><a href="#/statistics"><i class="icon-bar-chart"></i><span class="text">数据统计</span></a></li>
+              <!-- permission -->
+              <li>
+                  <a href="javascript:void(0);"><i class="icon-settings"></i><span class="text">系统权限管理<span class="label label-warning">PERMISSION</span></span></a>
+              </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar-footer">
+          <ul class="sidebar-actions">
+              <li class="action">
+                  <div class="btn-group dropup">
+                      <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                          <i class="icon-speedometer"></i><span>设备状态</span>
+                          <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                          <li class="header">Infrastructure <i class="icon-settings"></i></li>
+                          <li>
+                              <div class="title">Memory<span>2GB of 8GB</span></div>
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="title">HDD<span>750GB of 1TB</span></div>
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="title">SSD<span>300GB of 1TB</span></div>
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%"></div>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="title">Bandwidth<span>50TB of 50TB</span></div>
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="action">
+                  <div class="btn-group dropup">
+                      <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                          <i class="icon-list"></i><span>菜单</span>
+                          <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                          <li><a href="javascript:void(0);">Action</a></li>
+                          <li><a href="javascript:void(0);">Another action</a></li>
+                          <li><a href="javascript:void(0);">Something else here</a></li>
+                          <li class="divider"></li>
+                          <li><a href="javascript:void(0);">Separated link</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="action">
+                  <div class="btn-group dropup">
+                      <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                          <i class="icon-users"></i><span>联系人</span>
+                          <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                          <li class="header">Contacts <i class="icon-settings"></i></li>
+                          <li><a href="javascript:void(0);"><span class="status status-success"></span> Anton Phunihel</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-success"></span> Alphonse Ivo</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-success"></span> Thancmar Theophanes</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-warning"></span> Walerian Khwaja</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-warning"></span> Clemens Janko</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-warning"></span> Chidubem Gottlob</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-danger"></span> Hristofor Sergio</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-danger"></span> Tadhg Griogair</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-danger"></span> Pollux Beaumont</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-danger"></span> Adam Alister</a></li>
+                          <li><a href="javascript:void(0);"><span class="status status-danger"></span> Carlito Roffe</a></li>
+                      </ul>
+                  </div>
+              </li>
+          </ul>
+
+          <ul class="sidebar-terms">
+              <li><a href="javascript:void(0);">Terms</a></li>
+              <li><a href="javascript:void(0);">Privacy</a></li>
+              <li><a href="javascript:void(0);">Help</a></li>
+              <li><a href="javascript:void(0);">About</a></li>
+          </ul>
+
+      </div>
+  </div>
+</section>
+

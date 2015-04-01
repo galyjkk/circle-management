@@ -17,7 +17,9 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'duScroll'
+    'duScroll',
+    'ngAside',
+    'datatables'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,6 +30,10 @@ angular
       .when('/home', {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
+      })
+      .when('/statistics', {
+        templateUrl: 'views/statistics.html',
+        controller: 'StatisticsCtrl'
       })
       .otherwise({
         redirectTo: '/'

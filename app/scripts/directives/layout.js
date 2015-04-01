@@ -7,11 +7,4 @@ angular.module('circleManagementApp')
       restrict: 'E',
       replace: true
     };
-  })
-  .directive('sidebarView', function(){
-    return {
-      templateUrl: 'views/sidebar.html',
-      restrict: 'E',
-      replace: true
-    };
   });
