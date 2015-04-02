@@ -1,21 +1,82 @@
 <section class="statistics">
   <header-view></header-view>
   <!-- start: Content -->
-  <div class="main">
+  <div class="main" id="main-style">
     <div class="row">
       <div class="col-sm-12">
         <div class="panel panel-default">
           <div class="panel-heading">
-              <h2><i class="fa fa-list-alt"></i><span class="break"></span>Chart with points</h2>
+              <h2><i class="fa fa-list-alt"></i><span class="break"></span>用户活跃度</h2>
               <div class="panel-actions">
                   <a href="javascript:void(0);" class="btn-minimize"><i class="icon-arrow-up"></i></a>
               </div>
           </div>
           <div class="panel-body">
-              <nvd3 options='options' data='data'></nvd3>
+              <nvd3 options="multiBarOptions" data="multiBarData"></nvd3>
           </div>
         </div><!--/col-->
       </div>
+    </div><!--/row-->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2><i class="fa fa-list-alt"></i><span class="break"></span>总用户/总下载数量</h2>
+            <div class="panel-actions">
+              <a href="javascript:void(0);" class="btn-minimize"><i class="icon-arrow-up"></i></a>
+            </div>
+          </div>
+          <div class="panel-body">
+              <nvd3 options="totalUserOptions" data="totalUserData"></nvd3>
+          </div>
+        </div>
+      </div>
+    </div><!--/row-->
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2><i class="fa fa-list-alt"></i><span class="break"></span>手机型号统计（%）</h2>
+            <div class="panel-actions">
+              <a href="javascript:void(0);" class="btn-minimize"><i class="icon-arrow-up"></i></a>
+            </div>
+          </div>
+          <div class="panel-body">
+              <nvd3 options="pieMobileOptions" data="pieMobileData"></nvd3>
+          </div>
+        </div>
+      </div><!--/col-->
+
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading" data-original-title>
+            <h2><i class="fa fa-list-alt"></i><span class="break"></span>总活跃用户数量</h2>
+            <div class="panel-actions">
+              <a href="javascript:void(0);" class="btn-minimize"><i class="icon-arrow-up"></i></a>
+            </div>
+          </div>
+          <div class="panel-body">
+             <nvd3 options="totalActiveUserOptions" data="totalActiveUserData"></nvd3>
+          </div>
+        </div>
+      </div><!--/col-->
+
+      <!-- <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading" data-original-title>
+            <h2><i class="fa fa-list-alt"></i><span class="break"></span>分辨率统计</h2>
+            <div class="panel-actions">
+              <a href="javascript:void(0);" class="btn-minimize"><i class="icon-arrow-up"></i></a>
+            </div>
+          </div>
+          <div class="panel-body">
+             <nvd3 options="pieDpiOptions" data="pieDpiData"></nvd3>
+          </div>
+        </div>
+      </div> -->
+
     </div><!--/row-->
   </div>
   <!-- end: Content -->

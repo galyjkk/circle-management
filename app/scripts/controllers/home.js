@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('circleManagementApp')
-  .controller('HomeCtrl', function ($scope) {
+  .controller('HomeCtrl', function ($scope, $rootScope) {
     $scope.userInfo = [
       {
         'id': 1,
