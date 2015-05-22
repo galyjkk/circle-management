@@ -2,12 +2,12 @@
 
 angular.module('circleManagementApp')
   .service('MainService', function ($http) {
-    var configUrl = 'http://127.0.0.1:8080/CircleServer/CircleServlet';
+    var configUrl = 'http://127.0.0.1:9000/CircleServer/CircleServlet';
     var me = this;
     // Service logic
 
     this.onSendMessageToServer = function (data) {
-      console.log('callback+'+data);
+      console.log(data);
     };
 
     /**

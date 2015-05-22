@@ -20,6 +20,7 @@ angular.module('circleManagementApp')
 
     $scope.userLogin = function() {
       LoginService.userLogin();
+      //MainService.sendMessageToServer();
     };
 
   });

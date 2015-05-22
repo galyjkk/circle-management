@@ -1,7 +1,9 @@
 {
   "name": "circlemanagement",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "grunt-connect-proxy": "^0.2.0"
+  },
   "devDependencies": {
     "grunt": "latest",
     "grunt-autoprefixer": "latest",

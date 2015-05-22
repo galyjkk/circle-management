@@ -21,6 +21,9 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  //add proxy
+  grunt.loadNpmTasks('grunt-connect-proxy');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -73,24 +76,69 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        //hostname: '127.0.0.1',
-        hostname: '0.0.0.0',
+        hostname: '127.0.0.1',
+        //hostname: '0.0.0.0',
         livereload: 35729
       },
+      proxies: [
+        {
+          context: '/CircleServer', // the path your application uses
+          host: '127.0.0.1', // wherever the data service is running
+          port: 8080, // the port that the data service is running on
+          https: false,
+          xforward: false,
+          headers: {
+            'x-custom-added-header': 'value'
+          },
+          hideHeaders: ['x-removed-header']
+        }
+      ],
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
+          base: [
+            '.tmp',
+            '<%= yeoman.app %>'
+          ],
+          middleware: function (connect, options) {
+            var middlewares = [];
+
+            if (!Array.isArray(options.base)) {
+              options.base = [options.base];
+            }
+
+            // Setup the proxy
+            middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
+
+            // Serve static files
+            options.base.forEach(function(base) {
+              middlewares.push(connect.static(base));
+            });
+
             return [
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
                 connect.static('./bower_components')
               ),
-              connect.static(appConfig.app)
+              connect.static(appConfig.app),
+              middlewares
             ];
           }
         }
+        // options: {
+        //   open: true,
+        //   middleware: function (connect) {
+        //     return [
+        //       connect.static('.tmp'),
+        //       connect().use(
+        //         '/bower_components',
+        //         connect.static('./bower_components')
+        //       ),
+        //       connect.static(appConfig.app)
+        //     ];
+        //   }
+        // }
       },
       test: {
         options: {
@@ -399,6 +447,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
+      'configureProxies:server',
       'connect:livereload',
       'watch'
     ]);
