@@ -32,6 +32,14 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
+      .when('/content', {
+        templateUrl: 'views/content.html',
+        controller: 'ContentCtrl'
+      })
+      .when('/notification', {
+        templateUrl: 'views/notification.html',
+        controller: 'NotificationCtrl'
+      })
       .when('/statistics', {
         templateUrl: 'views/statistics.html',
         controller: 'StatisticsCtrl'

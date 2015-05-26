@@ -1,0 +1,55 @@
+<section class="content">
+  <header-view></header-view>
+  <!-- start: Content -->
+  <div class="main" id="main-style">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading" data-original-title>
+            <h2><i class="fa fa-user"></i><span class="break"></span>内容管理</h2>
+            <div class="panel-actions">
+              <a href="javascript:void(0);" class="btn-minimize"><i class="icon-arrow-up"></i></a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <table  datatable="ng" class="table table-striped table-bordered datatable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>消息内容</th>
+                  <th>附带图片名称</th>
+                  <th>发布时间</th>
+                  <th>截止时间</th>
+                  <th>发布地点</th>
+                  <th>创建人</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="message in messages">
+                <td>{{message.id}}</td>
+                <td>{{message.content}}</td>
+                <td>{{message.imageName}}</td>
+                <td>{{message.createTime}}</td>
+                <td>{{message.deadline}}</td>
+                <td>{{message.location}}</td>
+                <td>{{message.createBy}}</td>
+                <td>
+                  <a class="btn btn-info" href="table.html#">
+                    <i class="fa fa-edit "></i>
+                  </a>
+                  <a class="btn btn-danger" href="table.html#">
+                    <i class="fa fa-trash-o "></i>
+                  </a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!--/col-->
+
+    </div><!--/row-->
+  </div>
+  <!-- end: Content -->
+</section>
